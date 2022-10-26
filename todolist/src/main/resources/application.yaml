@@ -14,7 +14,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
   liquibase:
     change-log: classpath:liquibase/changelog/todolistdb.change-master.xml
     enabled: true
