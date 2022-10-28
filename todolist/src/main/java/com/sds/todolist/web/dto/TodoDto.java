@@ -1,12 +1,11 @@
 package com.sds.todolist.web.dto;
 
-import com.sds.todolist.web.Todo;
+import com.sds.todolist.web.domain.Todo;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Getter
 @NoArgsConstructor

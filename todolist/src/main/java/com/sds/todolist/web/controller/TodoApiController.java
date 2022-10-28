@@ -1,7 +1,7 @@
-package com.sds.todolist.web;
+package com.sds.todolist.web.controller;
 
 import com.sds.todolist.service.TodoService;
-import lombok.RequiredArgsConstructor;
+import com.sds.todolist.web.domain.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

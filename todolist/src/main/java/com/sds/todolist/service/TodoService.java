@@ -1,7 +1,7 @@
 package com.sds.todolist.service;
 
-import com.sds.todolist.web.Todo;
-import com.sds.todolist.TodoRepository;
+import com.sds.todolist.web.domain.Todo;
+import com.sds.todolist.web.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

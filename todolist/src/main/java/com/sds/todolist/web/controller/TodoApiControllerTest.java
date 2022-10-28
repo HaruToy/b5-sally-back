@@ -1,6 +1,6 @@
 //package com.sds.todolist.web;
 //
-//import com.sds.todolist.TodoRepository;
+//import com.sds.todolist.web.repository.TodoRepository;
 //import com.sds.todolist.web.dto.TodoDto;
 //import org.junit.After;
 //import org.junit.Test;

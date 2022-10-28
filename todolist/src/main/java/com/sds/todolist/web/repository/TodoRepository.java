@@ -1,6 +1,6 @@
-package com.sds.todolist;
+package com.sds.todolist.web.repository;
 
-import com.sds.todolist.web.Todo;
+import com.sds.todolist.web.domain.Todo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

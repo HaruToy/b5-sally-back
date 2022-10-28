@@ -1,4 +1,4 @@
-package com.sds.todolist.web;
+package com.sds.todolist.web.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -25,10 +25,10 @@ public class Todo {
         @Column(length = 100, columnDefinition = "TEXT", nullable = false)
         private String content;
 
-        @Column(length = 20)
+        @Column(length = 20,nullable = false)
         private String status;
 
-        @Column(nullable = true)
+        @Column(nullable = false)
         @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime created_date;
 
