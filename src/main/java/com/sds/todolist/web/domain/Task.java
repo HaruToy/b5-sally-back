@@ -31,7 +31,7 @@ public class Task {
         @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime created_date;
 
-        @Column(nullable = true)
+        @Column(nullable = false)
         @JsonDeserialize(using = LocalDateTimeDeserializer.class)
         @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         private LocalDateTime modified_date;
