@@ -1,6 +1,6 @@
 package com.sds.todolist.web.dto;
 
-import com.sds.todolist.web.domain.Todo;
+import com.sds.todolist.web.domain.Task;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,7 +23,7 @@ public class TodoDto {
         this.created_date=created_date;
     }
 
-    public Todo toEntity(){
-        return Todo.builder().owner(owner).content(content).status(status).created_date(created_date).build();
+    public Task toEntity(){
+        return Task.builder().owner(owner).content(content).status(status).created_date(created_date).build();
     }
 }

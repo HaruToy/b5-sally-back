@@ -1,6 +1,5 @@
 package com.sds.todolist.web.domain;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import lombok.Builder;
@@ -14,7 +13,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Todo {
+public class Task {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
@@ -22,7 +21,7 @@ public class Todo {
         @Column(length = 20, nullable = false)
         private String owner;
 
-        @Column(length = 100, columnDefinition = "TEXT", nullable = false)
+        @Column(length = 100, nullable = false)
         private String content;
 
         @Column(length = 20,nullable = false)
@@ -38,7 +37,7 @@ public class Todo {
         private LocalDateTime modified_date;
 
         @Builder
-        public Todo(String owner, String content, String status, LocalDateTime created_date) {
+        public Task(String owner, String content, String status, LocalDateTime created_date) {
             this.owner = owner;
             this.content = content;
             this.status = status;

@@ -1,7 +1,7 @@
 package com.sds.todolist.web.controller;
 
 import com.sds.todolist.service.TodoService;
-import com.sds.todolist.web.domain.Todo;
+import com.sds.todolist.web.domain.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,13 +20,13 @@ public class TodoApiController {
         this.todoService = TodoService;
     }
     @PostMapping("/api/tasks")
-    public Todo save(@RequestBody Todo requestDto) {
+    public Task save(@RequestBody Task requestDto) {
         return todoService.createTodo(requestDto);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Todo> create(@RequestBody Todo todo) {
+    public ResponseEntity<Task> create(@RequestBody Task task) {
         return ResponseEntity.ok()
-                .body(todoService.createTodo(todo));
+                .body(todoService.createTodo(task));
     }
 }
