@@ -16,14 +16,15 @@ public class TodoDto {
     private LocalDateTime created_date;
     private LocalDateTime modified_date;
     @Builder
-    public TodoDto(String owner,String content, String status,LocalDateTime created_date){
+    public TodoDto(String owner,String content, String status,LocalDateTime created_date,LocalDateTime modified_date){
         this.owner=owner;
         this.content=content;
         this.status=status;
         this.created_date=created_date;
+        this.modified_date=modified_date;
     }
 
     public Task toEntity(){
-        return Task.builder().owner(owner).content(content).status(status).created_date(created_date).build();
+        return Task.builder().owner(owner).content(content).status(status).created_date(created_date).modified_date(modified_date).build();
     }
 }
