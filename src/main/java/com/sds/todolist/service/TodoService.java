@@ -3,6 +3,7 @@ package com.sds.todolist.service;
 import com.sds.todolist.web.domain.Task;
 import com.sds.todolist.web.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,9 +16,9 @@ public class TodoService {
     private final TodoRepository todoRepo;
 
     public List<Task> getTodos() throws IllegalAccessException {
-        List<Task> tasks = todoRepo.findAll();
+        List<Task> tasks = todoRepo.findAll(Sort.by("id"));
 
-        if(!tasks.isEmpty()) return todoRepo.findAll();
+        if(!tasks.isEmpty()) return todoRepo.findAll(Sort.by("id"));
         else throw new IllegalAccessException("no such data");
     }
 
