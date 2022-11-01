@@ -1,10 +1,9 @@
 package com.sds.todolist.web.controller;
 
-import com.sds.todolist.service.TodoService;
+import com.sds.todolist.web.service.TodoService;
 import com.sds.todolist.web.domain.Task;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,14 +24,17 @@ public class TodoApiController {
         return todoService.createTodo(requestDto);
     }
     @ApiOperation(value = "일감 조회", notes = "일감 정보를 조회한다.")
-    @CrossOrigin(origins="*")
     @GetMapping(value = "/tasks")
     public List<Task> taskInfo() throws IllegalAccessException {
 //        List<Task> member = todoService.getTodos();
 //        return new ResponseEntity<List<Task>>(member, HttpStatus.OK);
         return todoService.getTodos();
     }
-
+    @CrossOrigin(origins="*")
+    @PostMapping("/tasks/{id}")
+    public Long update(@PathVariable Long id, @RequestBody Task requestDto) {
+        return todoService.update(id, requestDto);
+    }
     @PostMapping("/create")
     public ResponseEntity<Task> create(@RequestBody Task task) {
         return ResponseEntity.ok()
