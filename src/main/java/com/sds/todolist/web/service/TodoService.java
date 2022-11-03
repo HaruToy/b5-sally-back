@@ -33,9 +33,7 @@ public class TodoService {
 
     public Long update(Long id, Task requestDto) {
         Task task = todoRepo.findById(id).orElseThrow(()-> new IllegalArgumentException("없다"+id));
-        //JPA 의 영속성 컨텍스트 덕분에 entity 객체의 값만 변경하면 자동으로 변경사항 반영함!
-        //따라서 repository.update 를 쓰지 않아도 됨.
-        task.update( requestDto.getContent(),requestDto.getStatus(),requestDto.getModified_date());
+        todoRepo.save(requestDto);
         return id;
     }
     public void deleteTodoById(final Long id){
