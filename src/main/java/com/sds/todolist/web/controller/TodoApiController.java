@@ -15,7 +15,6 @@ public class TodoApiController {
 
     private final TodoService todoService;
 
-    @Autowired // Constructor 를 통한 Di
     public TodoApiController(TodoService TodoService) {
         this.todoService = TodoService;
     }
@@ -30,7 +29,6 @@ public class TodoApiController {
 //        return new ResponseEntity<List<Task>>(member, HttpStatus.OK);
         return todoService.getTodos();
     }
-    @CrossOrigin(origins="*")
     @PostMapping("/tasks/{id}")
     public Long update(@PathVariable Long id, @RequestBody Task requestDto) {
         return todoService.update(id, requestDto);

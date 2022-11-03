@@ -25,12 +25,12 @@ public class TodoService {
     public Task getTodoById(final Long id){
         return todoRepo.findById(id).orElseThrow(()-> new IllegalArgumentException("no such data"));
     }
-    @Transactional
+
     public Task createTodo(final Task createTask){
         if(createTask ==null) throw new IllegalArgumentException("task can't be null");
         return todoRepo.save(createTask);
     }
-    @Transactional
+
     public Long update(Long id, Task requestDto) {
         Task task = todoRepo.findById(id).orElseThrow(()-> new IllegalArgumentException("없다"+id));
         //JPA 의 영속성 컨텍스트 덕분에 entity 객체의 값만 변경하면 자동으로 변경사항 반영함!
